@@ -1,0 +1,11 @@
+{
+  "name": "local-userpass",
+  "type": "local-userpass",
+  "config": {
+    "emailConfirmationUrl": "Http://quik-biz.org/confirmed",
+    "emailConfirmationSubject": "Welcome to Quik Biz!",
+    "resetPasswordSubject": "Don't worry we'll fix it!",
+    "resetPasswordUrl": "Http://quik-biz.org/reset"
+  },
+  "disabled": false
+}

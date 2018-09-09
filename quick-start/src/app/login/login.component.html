@@ -1,0 +1,28 @@
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      {{ title }}
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+          <label class="col-md-4">Email</label>
+          <input type="text" class="form-control" formControlName="email" #email/>
+      </div>
+      <form [formGroup]="angForm" novalidate>
+        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['email'].errors.required">
+            Email is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Password</label>
+          <input type="password" class="form-control" formControlName="pw" #pw/>
+        </div>
+          <div *ngIf="angForm.controls['pw'].errors.required">
+            Password is required.
+          </div>
+          <div class="form-group">
+            <button (click)="login(email.value, pw.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Login</button>
+          </div>
+      </form>
+    </div>
+  </div>
